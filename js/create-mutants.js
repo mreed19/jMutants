@@ -13,8 +13,8 @@ function createMutant(mutant) {
     data: {
       mutant: mutant
     },
-    success: function(x) {
-      alert(x);
+    success: function(mutant) {
+      addMutant(mutant);
     }
   });
 }
