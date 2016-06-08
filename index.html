@@ -1,26 +1,70 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>jJMutants</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jMutants</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
-    <h1>jMutants</h1>
-    <form id="new_mutant">
-      <input type="text" name="mutantName" placeholder="Enter mutant name" required>
-      <input type="text" name="realName" placeholder="Enter real name" required>
-      <input type="text" name="power" placeholder="Enter power" required>
-      <button type="submit">Create Mutant</button>
-    </form>
-    <ul id='mutantList'>
-      <li class="template">
-        <span class="mutant-name">Wolverine</span>
-        (<a href="#" class="delete">delete</a>)
-      </li>
-    </ul>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="js/get-mutants.js"></script>
+    <div class="row">
+      <div class="medium-offset-2 medium-8 columns">
+        <h2>jMutants</h2>
+        <p class="ajax-buttons">
+          <a href="https://mutant-school.herokuapp.com/api/v1/mutants"
+            class="button"
+            data-remote-mutants="true"
+            id="load">Load Mutants</a>
+        </p>
+        <form id="mutant_form">
+          <div class="input-group">
+            <input type="text" name="mutantName" placeholder="Enter mutant name" required>
+            <input type="text" name="realName" placeholder="Enter real name" required>
+            <input type="text" name="power" placeholder="Enter power" required>
+            <div class="input-group-button">
+              <button type="submit" class="success button expanded">Create Mutant</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-8 medium-offset-2 columns">
+        <ul class="no-bullet" id="mutant_list">
+          <li class="mutant template hide clearfix">
+            <span class="mutant-name editable"></span>
+            <span class="mutant-real-name editable"></span>
+            <span class="mutant-power editable"></span>
+            <span class="actions expanded button-group">
+              <a href="#" class="edit button"><i class="fa fa-pencil"></i></a>
+              <a href="#" class="remove alert button"><i class="fa fa-trash-o"></i></a>
+            </span>
+            <form class="edit-form hide">
+              <div class="input-group">
+                <input type="text" name="mutantName" class="input-group-field">
+                <input type="text" name="realName" class="input-group-field">
+                <input type="text" name="power" class="input-group-field">
+                <div class="input-group=button">
+                  <button type="submit" class="success button"><i class="fa fa-check"></i></button>
+                  <button type="button" class="alert cancel button"><i class="fa fa-times"></i></button>
+                </div>
+              </div>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <!-- <script src="js/get-mutants.js"></script>
     <script src="js/create-mutants.js"></script>
-    <script src="js/delete-mutant.js"></script>
+    <script src="js/delete-mutant.js"></script> -->
+    <script src="js/jmutants.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

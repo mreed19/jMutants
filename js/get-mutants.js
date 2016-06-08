@@ -11,8 +11,8 @@ $.get({
 function addMutant(mutant) {
   var li = $('.template')
     .clone()
-    .removeClass('template');
+    .removeClass('template hide clearfix');
   li.find('.mutant-name').text(mutant.mutant_name);
   li.attr('data-id', mutant.id);
-  $('#mutantList').append(li);
+  $('#mutant_list').append(li);
 }

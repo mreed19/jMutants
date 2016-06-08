@@ -1,0 +1,46 @@
+#mutant_form > div {
+  padding: 0;
+}
+
+.actions {
+  float: right;
+  transition: 0.3s;
+  opacity: 0;
+  margin-bottom: 0;
+}
+
+.mutant {
+  border: 1px solid #ddd;
+  height: 4rem;
+  padding: .75rem 1.25rem;
+  margin-bottom: -1px;
+  transition: 0.15s;
+}
+
+.mutant:hover .actions {
+  opacity: 1;
+}
+
+.mutant .input-group {
+  margin-bottom: 0;
+}
+
+span.mutant-name {
+  line-height: 40px;
+  padding: 1px 1px 1px 9px;
+}
+
+.mutant input[name=mutantName] {
+  line-height: inherit;
+  padding: 0 0 0 8px;
+}
+
+.mutant input[name=realName] {
+  line-height: inherit;
+  padding: 0 0 0 8px;
+}
+
+.mutant input[name=power] {
+  line-height: inherit;
+  padding: 0 0 0 8px;
+}
