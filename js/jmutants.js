@@ -133,22 +133,21 @@ var jMutants = {
       power: f.find('input[name="power"]').val(),
       id: li.attr('data-id')
     });
-    debugger;
-    li.find('.mutant-name .editable').val().text((f.find('input[name="mutantName"]').val()));
-    li.find('.mutant-real-name .editable').val().text(f.find('input[name="realName"]').val());
-    li.find('.mutant-power .editable').val().text(f.find('input[name="power"]').val());
+    li.find('.mutant-name').text(f.find('input[name="mutantName"]').val());
+    li.find('.mutant-real-name').text('[' + f.find('input[name="realName"]').val() + ']');
+    li.find('.mutant-power').text('(' + f.find('input[name="power"]').val() + ')');
   },
 
-  editMutantAjax(mutant) {
+  editMutantAjax: function(mutant) {
     $.ajax({
       url: "https://mutant-school.herokuapp.com/api/v1/mutants/" + mutant.id,
       method: "PUT",
       data: {
         mutant: mutant
       },
-      success: function(result) {
-        console.log(result);
-      }
+      // success: function(result) {
+      //   console.log(result);
+      // }
     });
   }
 }
